@@ -19,9 +19,88 @@ library(plotly)
  
  do some initial data cleaning/subsetting
  
+```{r}
+data("nyc_airbnb")
+
+nyc_airbnb = 
+  nyc_airbnb |> 
+  mutate(rating = review_scores_location / 2) |> 
+  select(
+    rating, neighbourhood, neighbourhood_group, price,
+    room_type,lat, long) |> 
+  filter(
+    !is.na(rating), 
+    neighbourhood_group == "Manhattan", 
+    room_type == "Entire home/apt",
+    price %in% 100:500
+  )
+```
  
  
+Use plotly
+
+```{r}
+nyc_airbnb |> 
+  mutate(
+    text_label = 
+      str_c("Price: ",  price, "Neighborhood: ",  neighbourhood)) |> 
+  plot_ly(
+    x = ~lat, y = ~long, color = ~price, text = ~text_label,
+    type = "scatter", mode = "markers"
+  )
+```
  
+Next up -- box plot
  
- 
+```{r}
+nyc_airbnb |> 
+  mutate(neighbourhood =  fct_reorder(neighbourhood, price)) |> 
+  plot_ly(
+    color = ~neighbourhood, y = ~price,
+    type = "box", colors = "viridis"
+  )
+```
+
+let's do a bar chart with nnumber of rentals
+
+```{r}
+nyc_airbnb |>
+  count(neighbourhood) |> 
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
+  plot_ly(x = ~neighbourhood,  y = ~n, color = ~neighbourhood,
+          type = "bar", colors = "viridis")
+```
+
+
+
+```{r}
+nyc_airbnb |>
+  count(neighbourhood) |> 
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
+  plot_ly(x = neighbourhood,  y = ~n,
+          type = "bar")
+```
+
+
+```{r}
+plot_ly(
+  z = volcano, type = "heatmap"
+)
+```
+
+
+here's a chloropleth
+```{r}
+plot_ly(
+  type = "chloropleth",
+  location = c("AZ", "CA", "VT"),
+  locationmode ="USA-states",
+  colorscale("Virids"),
+  z = c(10,20,40)) |> 
+  layout( geo =list(scope = "usa"))
+```
+
+
+
+
  

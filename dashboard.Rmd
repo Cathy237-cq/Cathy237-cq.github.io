@@ -1,0 +1,53 @@
+---
+title: "Dashboard"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+nyc_airbnb |> 
+  mutate(neighbourhood =  fct_reorder(neighbourhood, price)) |> 
+  plot_ly(
+    color = ~neighbourhood, y = ~price,
+    type = "box", colors = "viridis"
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+nyc_airbnb |> 
+  mutate(
+    text_label = 
+      str_c("Price: ",  price, "Neighborhood: ",  neighbourhood)) |> 
+  plot_ly(
+    x = ~lat, y = ~long, color = ~price, text = ~text_label,
+    type = "scatter", mode = "markers"
+  )
+```
+
+### Chart C
+
+```{r}
+nyc_airbnb |> 
+  mutate(neighbourhood =  fct_reorder(neighbourhood, price)) |> 
+  plot_ly(
+    color = ~neighbourhood, y = ~price,
+    type = "box", colors = "viridis"
+  )
+```
