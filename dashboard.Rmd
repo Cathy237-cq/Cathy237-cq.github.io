@@ -1,0 +1,125 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(httr)
+library(jsonlite)
+library(p8105.datasets)
+library(ggplot2)
+library(lubridate) 
+```
+
+```{r}
+get_all_inspections = function(url) {
+  
+  all_inspections = vector("list", length = 0)
+  
+  loop_index = 1
+  chunk_size = 50000
+  DO_NEXT = TRUE
+  
+  while (DO_NEXT) {
+    message("Getting data, page ", loop_index)
+    
+    all_inspections[[loop_index]] = 
+      GET(url,
+          query = list(`$order` = "zipcode",
+                       `$limit` = chunk_size,
+                       `$offset` = as.integer((loop_index - 1) * chunk_size)
+                       )
+          ) %>%
+      content("text") %>%
+      fromJSON() %>%
+      as_tibble()
+    
+    DO_NEXT = dim(all_inspections[[loop_index]])[1] == chunk_size
+    loop_index = loop_index + 1
+  }
+  
+  all_inspections
+  
+}
+
+url = "https://data.cityofnewyork.us/resource/43nn-pn8j.json"
+
+nyc_inspections = 
+  get_all_inspections(url) %>%
+  bind_rows() 
+```
+
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+scatter_plot =
+  nyc_inspections |> 
+  mutate(
+    grade_date = as.Date(grade_date), 
+    grade = factor(grade), 
+    year = year(grade_date)  # Extract year from grade_date
+  ) %>%
+  filter(boro == "Manhattan", year == 2024, grade %in% c("A", "B", "C")) |> 
+   mutate(
+     text_label = paste("Grade: ", grade, "\nDate: ", format(grade_date, "%Y-%m-%d"))) |> 
+  plot_ly( x = ~longitude, y = ~latitude, text = ~text_label, 
+  type = 'scatter', mode = 'markers', color = ~grade
+) |> 
+  layout(
+    title = "Grade Levels in Manhattan for 2024",
+    xaxis = list(title = "Longitude"),
+    yaxis = list(title = "Latitude"),
+    hovermode = "closest"
+  )
+scatter_plot
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+box_plot = 
+  nyc_inspections |> 
+  filter(boro != "0",
+         year(grade_date) == 2024) |> 
+  mutate(
+    score = as.numeric(score),  
+    boro = factor(boro, 
+    levels = c("Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island")
+  )) |> 
+  plot_ly(x = ~boro, y = ~score, type = "box", color = ~boro, colors = "viridis")|> 
+    layout(title = "Inspection Scores Across Boroughs for 2024",
+           xaxis = list(title = "Borough"),
+           yaxis = list(title = "Inspection Scores"))
+box_plot
+```
+
+### Chart C
+
+```{r}
+bar_chart =
+  nyc_inspections|> 
+  filter(
+    year(as.Date(grade_date)) == 2024, 
+    grade %in% c("A", "B", "C")) |> 
+  group_by(boro, grade) |> 
+  summarise(count = n(),.groups = 'drop')|> 
+  plot_ly(x = ~boro, y = ~count, color = ~grade,  
+          colors = "viridis", type = "bar"
+)
+bar_chart
+```
+
