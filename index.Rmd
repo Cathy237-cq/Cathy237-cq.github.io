@@ -5,10 +5,14 @@ output:
     toc: true
     toc_float: true
 ---
+## About Me
 
-## This is Cathy Cai's personal website.
 
-Cathy Cai is currently a second-year Master of Public Health student major in Epidemiology, with a certificate in Biostatistic and Public Health Data Science in Columbia University.
+Hi, this is Cathy. 
+
+I am currently a second-year Master of Public Health student at Columbia University, majoring in Epidemiology with a certificate in Biostatistics and Public Health Data Science.
+
+Originally from Zhejiang, China, I am enjoys running, playing tennis, and hiking. My favorite place in New York is Central Park. In my spare time, I also delight in cooking and baking. 
 
 Visit [this page](More-Information.html) to learn more about my academic and professional experience.
 

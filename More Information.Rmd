@@ -9,6 +9,7 @@ output:
 ## Academic and Professional experience about Me.
 
 
+
 ### Education
 
 **Columbia University, Mailman School of Public Health | New York, NY**  
@@ -26,43 +27,70 @@ Awards: National Scholarship, Government-funded Scholarship, Graduated as the to
 
 ### Publications
 
-- Cai Q, et al (2023). "The Impact of Doctor-patient Relationship on Grassroots Health Management Services in Hangzhou Based on Trust Perspective." _Medicine and Society_, 36.03(2023):56-59+65.
-- Wu F., Cai Q, et al (2022). "Longitudinal comparative analysis of clinical probation teaching effect of health service and management specialty based on competency-based education theory." _China Health Industry_, 19.14(2022):169-172,180.
+- Cai Q, et al (2023). The Impact of Doctor-patient Relationship on Grassroots Health Management Services in Hangzhou Based on Trust Perspective. _Medicine and Society_, 36.03(2023):56-59+65. doi:10.13723/j.yxysh.2023.03.010.
+-	Wu F., Cai Q, et al (2022). Longitudinal comparative analysis of clinical probation teaching effect of health service and management specialty based on competency-based education theory. _China Health Industry_, 19.14(2022):169-172,180. doi:10.16659/j.cnki.1672-5654.2022.14.169.
+-	Tan F., Lai S., Chen J., Cai Q, et al (2022). Application of national health information platform in county-level medical communities from the perspective of medicine and prevention integration. _Chinese Rural Health Service Administration_, 42.10(2022):720-725. doi:10.19955/j.cnki.1005-5916.2022.10.008.
+-	Zhou C., Tan F., Lai S., Chen J., Cai Q, et al (2022). Health Promotion Capacity among Chinese Healthcare Professionals and Its Influence on Preventive Health Service Practices. _Journal of Multidisciplinary Healthcare_, 15(2022):343-352. doi:10.2147/JMDH.S349449
+-	Tan F, Wu S, Zhou C, Zhang J, Cai Q, et al (2020). Analysis on self-evaluation health management service capability of primary medical staff in Zhejiang's county-level medical alliances. _Chinese Journal of Hospital Administration_, 36(08):664-667. doi:10.3760/cma.j.cn111325-20200422-01164.
 
 ### Research Projects
 
 **The Construction and Intervention of Primary School Students' Creative Dance Course Based on Intervention of Emotion Regulation Ability**  
 _Project Leader, Hangzhou Normal University, Nursing Department_  
 Mar 2022 – May 2022  
-Won the Bronze Prize at the Zhejiang Province Nursing Competition.
+
+- Won the Bronze Prize at the Zhejiang Province Nursing Competition.
+- Created project proposals and interview outlines within 2 weeks, based on the adaptation of The Chinese version of the Children's Mental Health Scale, to ensure the applicability and feasibility of the research project.
+- Developed an innovative dance program guided by Laban's dance therapy theory and the Gross model of emotion regulation, to enhance 100 elementary school students' emotional regulation capabilities.
 
 **The Obstacles and Promotion Countermeasures for the Elderly to Use Intelligent Technology within Hospital**  
 _Core Member, Hangzhou Normal University, Engineering Department_  
 Feb 2022 – Apr 2022  
-Increased the use of intelligent technologies by elderly people in hospitals by 15%.
+
+- Designed and implemented semi-structured qualitative interviews and stratified sampling quantitative survey data, to deeply explore the factors influencing elderly individuals' capacity to accept technology usage in the hospital.
+- Cleaned data using R and built a logistic regression model to identify determinants of intelligent technology use in medical institutions among the elderly.
+- Classified levels of technological proficiency of the elderly by developing healthcare interventions, increasing the prevalence of the use of intelligent technologies by elderly people in hospitals by 15%.
 
 ### Internship Experience
 
 **GSK Consumer Healthcare (China) Co. Ltd.**  
 _Consumer Business Insight & Analytics Intern, Shanghai, China_  
 Feb 2023 – May 2023  
-Utilized Power BI, Brand Performance System, and Excel to analyze data and compile reports.
+
+- Utilized Power BI, Brand Performance System (Company’s internal system), and Excel VLOOKUP, PivotTable to analyze Over-the-Counter (OTC) data and compile 20 weekly and 5 monthly reports of product sales.
+- Presented 10 insight reports focused on OTC in the consumer healthcare industry field and collaborated with the Marketing Department to do secondary research and market surveys on the Chinese OTC market within 3 months.
+- Coordinated with agencies to facilitate the implementation of new projects, and managed project processes including contracts, approvals, and invoice tracking, accelerating new projects' completion time by 1 month.
 
 **Sir Run Run Shaw Hospital**  
 _Healthcare Department Intern, Hangzhou, China_  
 Jul 2022 – Oct 2022  
-Collected and analyzed COVID-19 patients' data, provided data support for controlling the spread of COVID-19 in urban areas in Hangzhou.
+
+- Collected and analyzed 1,500+ COVID-19 patients' data in SAS and visualized epidemiological survey data on hospital COVID-19 infections, providing data support for controlling the spread of COVID-19 in urban areas in Hangzhou.
+- Generated COVID-19 vaccine-related figures in SAS to track vaccine side effect reported data; tools in SAS included box plots, forest plots, and scatter plots using proc sgrender, proc template, and proc gplot.
+- Completed 500+ infectious disease reports and presented to the Hangzhou Health Commission, prompting surveillance of infectious disease data sources at the Zhejiang Provincial CDC in the fall season.
 
 ### Leadership Experience
 
 **Student Union President**  
 _Hangzhou Normal University, School of Public Health_  
 June 2022 – May 2023  
-Led planning and execution of campus-wide activities, established strategic partnerships, and hosted on-campus/online job fairs.
+
+- Led the planning and execution of campus-wide activities, established strategic partnerships with companies, and hosted on-campus/online job fairs to increase student employment rate by 20% during the COVID-19 period.
+- Directed the Student Affairs Department, engaging with faculty to integrate student feedback into actionable insights, supervised monthly reports for the Student Union, improving student academic and campus life experiences.
+- Hosted community-based public health events to increase the college's engagement on social media platforms, broadcasting the college's exposure on social media by 10%.
+
+**Co-founder of “Stand by Her” (school organization)**  
+_Hangzhou Normal University_  
+Oct 2021 – Dec 2022  
+
+- Co-founded “Stand by Her” a health charity dedicated to supporting women's well-being.
+- Directed external communications and volunteer recruitment initiatives, fostering corporate partnerships for feminine hygiene product donations during COVID-19.
+- Managed project coordination and stakeholder engagement, connecting with remote primary schools and medical academics to organize educational sessions on women’s reproductive health.
+
 
 ### Skills
 
-- Data Analysis: SPSS, SAS, R, SQL, STATA, Python
+- Data Analysis: SPSS, SAS, R, SQL, STATA
 - Computer Tools: MS Word, Excel, PowerPoint, Tableau, Adobe Photoshop
 
 [Email me](mailto:qc2337@cumc.columbia.edu) | [Connect on LinkedIn](https://www.linkedin.com/in/cathycai23/)

@@ -4,11 +4,11 @@ navbar:
   title: "About Me"
   right:
     - text: "More Information"
-      href: More Information.html
+      href: More-Information.html
     - icon: fa-envelope fa-lg
       href: mailto:qc2337@cumc.columbia.edu
     - icon: fa-github fa-lg
       href: http://github.com/Cathy237-cq/
 output:
   html_document:
-    theme: cerulean
+    theme: readable
